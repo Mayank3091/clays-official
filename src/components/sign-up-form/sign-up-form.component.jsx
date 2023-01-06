@@ -30,7 +30,7 @@ const SignUpForm = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
-      console.log('Passwords Do Not Match');
+      alert('Passwords Do Not Match');
       return;
     }
     try {
@@ -41,9 +41,9 @@ const SignUpForm = () => {
 
       resetValues();
 
-      createUserDocumentFromAuth(user, { displayName });
+      await createUserDocumentFromAuth(user, { displayName });
     } catch (error) {
-      console.log(`Could not fetch ${error.message}`);
+      alert(`Could not fetch ${error.message}`);
     }
   };
 

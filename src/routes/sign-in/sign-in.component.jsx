@@ -8,8 +8,7 @@ import './sign-in.styles.scss';
 
 const SignIn = () => {
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopUp();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopUp();
   };
 
   return (

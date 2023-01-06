@@ -27,8 +27,7 @@ const SignInForm = (props) => {
     event.preventDefault();
 
     try {
-      const response = await LoggingWithEmailandPass(email, password);
-      console.log(response);
+      await LoggingWithEmailandPass(email, password);
       resetValues();
     } catch (error) {
       if (error.code === 'auth/wrong-password') {
@@ -41,7 +40,7 @@ const SignInForm = (props) => {
 
   return (
     <div className="form-container">
-      <h2>Already Have an Account</h2>
+      <h2>Already have an account?</h2>
       <span>Sign in with Email and Password</span>
       <form onSubmit={onSubmitHandler}>
         <FormInput
